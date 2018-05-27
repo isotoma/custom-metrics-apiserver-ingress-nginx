@@ -1,0 +1,8 @@
+package: github.com/isotoma/custom-metrics-apiserver-ingress-nginx
+import:
+- package: k8s.io/client-go
+  version: HEAD
+- package: github.com/spf13/cobra
+  version: ^0.0.3
+- package: github.com/spf13/pflag
+  version: ^1.0.1
