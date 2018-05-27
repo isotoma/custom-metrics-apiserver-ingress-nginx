@@ -176,6 +176,14 @@ func (p *nginxProvider) valueFor(groupResource schema.GroupResource, metricName 
 
 func (p *nginxProvider) ListAllMetrics() []provider.CustomMetricInfo {
 	fmt.Println("ListAllMetrics")
+	_, err := p.client.ClientForGroupVersionResource(schema.GroupVersionResource{
+		Group:    "",
+		Resource: "Pod",
+		Version:  "",
+	})
+	if err != nil {
+		fmt.Printf("%v+\n", err)
+	}
 	return []provider.CustomMetricInfo{
 		{
 			GroupResource: schema.GroupResource{Group: "", Resource: "service"},

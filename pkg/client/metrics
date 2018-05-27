@@ -1,0 +1,474 @@
+# HELP cpu_seconds_total Cpu usage in seconds
+# TYPE cpu_seconds_total counter
+cpu_seconds_total 214.33999999999997
+# HELP go_gc_duration_seconds A summary of the GC invocation durations.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 2.1715e-05
+go_gc_duration_seconds{quantile="0.25"} 3.9637e-05
+go_gc_duration_seconds{quantile="0.5"} 5.6742e-05
+go_gc_duration_seconds{quantile="0.75"} 0.000121472
+go_gc_duration_seconds{quantile="1"} 0.003658418
+go_gc_duration_seconds_sum 0.257726789
+go_gc_duration_seconds_count 688
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 73
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 7.941928e+06
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 5.00178584e+09
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.631849e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 4.763628e+07
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 909312
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 7.941928e+06
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 9.486336e+06
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 1.0469376e+07
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 44155
+# HELP go_memstats_heap_released_bytes_total Total number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes_total counter
+go_memstats_heap_released_bytes_total 8.708096e+06
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 1.9955712e+07
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.527441496126049e+09
+# HELP go_memstats_lookups_total Total number of pointer lookups.
+# TYPE go_memstats_lookups_total counter
+go_memstats_lookups_total 193037
+# HELP go_memstats_mallocs_total Total number of mallocs.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 4.7680435e+07
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 3472
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 16384
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 145312
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 212992
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 1.3350288e+07
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 684687
+# HELP go_memstats_stack_inuse_bytes Number of bytes in use by the stack allocator.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 1.671168e+06
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 1.671168e+06
+# HELP go_memstats_sys_bytes Number of bytes obtained by system. Sum of all system allocations.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 2.5082104e+07
+# HELP ingress_controller_ssl_expire_time_seconds Number of seconds since 1970 to the SSL Certificate expire. An example to check if this certificate will expire in 10 days is: "ingress_controller_ssl_expire_time_seconds < (time() + (10 * 24 * 3600))"
+# TYPE ingress_controller_ssl_expire_time_seconds gauge
+ingress_controller_ssl_expire_time_seconds{host="beta.hra.nhs.uk"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="citest-stage.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="control.demo.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="djangocitest-stage.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gip-redirector.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gip-stage-redirector.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gip-stage.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gip.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester-charity.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester-intranet.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester-redirector.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester-stage-charity.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester-stage-intranet.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester-stage-redirector.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester-stage.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="gloucester.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="hra-redirector.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="hra-stage-redirector.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="hra-stage.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="hra.nhs.uk"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="hra.trustsrv.io"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="html-templates.isotoma.com"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="www.gloshospitals.nhs.uk"} -6.21355968e+10
+ingress_controller_ssl_expire_time_seconds{host="www.hra.nhs.uk"} -6.21355968e+10
+# HELP ingress_controller_success Cumulative number of Ingress controller reload operations
+# TYPE ingress_controller_success counter
+ingress_controller_success{count="reloads"} 1
+# HELP nginx_bytes_total Nginx bytes count
+# TYPE nginx_bytes_total counter
+nginx_bytes_total{direction="in",ingress_class="nginx",namespace="",server_zone="*"} 2.4259785e+07
+nginx_bytes_total{direction="in",ingress_class="nginx",namespace="",server_zone="_"} 1.934785e+06
+nginx_bytes_total{direction="in",ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com"} 532252
+nginx_bytes_total{direction="in",ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk"} 1.1599022e+07
+nginx_bytes_total{direction="in",ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk"} 1.0193726e+07
+nginx_bytes_total{direction="out",ingress_class="nginx",namespace="",server_zone="*"} 1.076919717e+09
+nginx_bytes_total{direction="out",ingress_class="nginx",namespace="",server_zone="_"} 1.2945683e+07
+nginx_bytes_total{direction="out",ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com"} 207792
+nginx_bytes_total{direction="out",ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk"} 6.85974654e+08
+nginx_bytes_total{direction="out",ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk"} 3.77791588e+08
+# HELP nginx_cache_total Nginx cache count
+# TYPE nginx_cache_total counter
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="bypass"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="expired"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="hit"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="miss"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="revalidated"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="scarce"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="stale"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="*",type="updating"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="bypass"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="expired"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="hit"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="miss"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="revalidated"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="scarce"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="stale"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="_",type="updating"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="bypass"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="expired"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="hit"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="miss"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="revalidated"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="scarce"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="stale"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",type="updating"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="bypass"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="expired"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="hit"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="miss"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="revalidated"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="scarce"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="stale"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",type="updating"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="bypass"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="expired"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="hit"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="miss"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="revalidated"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="scarce"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="stale"} 0
+nginx_cache_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",type="updating"} 0
+# HELP nginx_connections_total Nginx connections count
+# TYPE nginx_connections_total counter
+nginx_connections_total{ingress_class="nginx",namespace="",type="accepted"} 28212
+nginx_connections_total{ingress_class="nginx",namespace="",type="active"} 2
+nginx_connections_total{ingress_class="nginx",namespace="",type="handled"} 28212
+nginx_connections_total{ingress_class="nginx",namespace="",type="reading"} 0
+nginx_connections_total{ingress_class="nginx",namespace="",type="requests"} 34026
+nginx_connections_total{ingress_class="nginx",namespace="",type="waiting"} 1
+nginx_connections_total{ingress_class="nginx",namespace="",type="writing"} 1
+# HELP nginx_requests_total The total number of requested client connections.
+# TYPE nginx_requests_total counter
+nginx_requests_total{ingress_class="nginx",namespace="",server_zone="*"} 49314
+nginx_requests_total{ingress_class="nginx",namespace="",server_zone="_"} 18736
+nginx_requests_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com"} 936
+nginx_requests_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk"} 15738
+nginx_requests_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk"} 13904
+# HELP nginx_responses_total The number of responses with status codes 1xx, 2xx, 3xx, 4xx, and 5xx.
+# TYPE nginx_responses_total counter
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="*",status_code="1xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="*",status_code="2xx"} 37576
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="*",status_code="3xx"} 494
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="*",status_code="4xx"} 11240
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="*",status_code="5xx"} 4
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="_",status_code="1xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="_",status_code="2xx"} 18736
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="_",status_code="3xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="_",status_code="4xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="_",status_code="5xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",status_code="1xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",status_code="2xx"} 936
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",status_code="3xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",status_code="4xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="html-templates.isotoma.com",status_code="5xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",status_code="1xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",status_code="2xx"} 6862
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",status_code="3xx"} 80
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",status_code="4xx"} 8794
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.gloshospitals.nhs.uk",status_code="5xx"} 2
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",status_code="1xx"} 0
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",status_code="2xx"} 11042
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",status_code="3xx"} 414
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",status_code="4xx"} 2446
+nginx_responses_total{ingress_class="nginx",namespace="",server_zone="www.hra.nhs.uk",status_code="5xx"} 2
+# HELP nginx_upstream_backup Current backup setting of the server.
+# TYPE nginx_upstream_backup counter
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_backup{ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 0
+# HELP nginx_upstream_bytes_total The total number of bytes sent to this server.
+# TYPE nginx_upstream_bytes_total counter
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 2.542394e+06
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 2.904224e+06
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 266126
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 2.895287e+06
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_bytes_total{direction="in",ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 2.554469e+06
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 9.6286288e+07
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 1.74474854e+08
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 103896
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 1.68512473e+08
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_bytes_total{direction="out",ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 9.2609506e+07
+# HELP nginx_upstream_fail_timeout Current fail_timeout setting of the server.
+# TYPE nginx_upstream_fail_timeout counter
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 10
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_fail_timeout{ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 0
+# HELP nginx_upstream_maxfails Current max_fails setting of the server.
+# TYPE nginx_upstream_maxfails counter
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 1
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_maxfails{ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 0
+# HELP nginx_upstream_requests_total The total number of client connections forwarded to this server.
+# TYPE nginx_upstream_requests_total counter
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 3475
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 3943
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 468
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 3926
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_requests_total{ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 3477
+# HELP nginx_upstream_response_msecs_avg The average of only upstream response processing times in milliseconds.
+# TYPE nginx_upstream_response_msecs_avg counter
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 2
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 8
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 19
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_response_msecs_avg{ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 3
+# HELP nginx_upstream_responses_total The number of upstream responses with status codes 1xx, 2xx, 3xx, 4xx, and 5xx.
+# TYPE nginx_upstream_responses_total counter
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="0.0.0.1:80",status_code="1xx",upstream="upstream_balancer"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="0.0.0.1:80",status_code="2xx",upstream="upstream_balancer"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="0.0.0.1:80",status_code="3xx",upstream="upstream_balancer"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="0.0.0.1:80",status_code="4xx",upstream="upstream_balancer"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="0.0.0.1:80",status_code="5xx",upstream="upstream_balancer"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.10:80",status_code="1xx",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.10:80",status_code="2xx",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.10:80",status_code="3xx",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.10:80",status_code="4xx",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.10:80",status_code="5xx",upstream="demo-trustserve-control-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.19:80",status_code="1xx",upstream="production-hra-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.19:80",status_code="2xx",upstream="production-hra-80"} 2784
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.19:80",status_code="3xx",upstream="production-hra-80"} 105
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.19:80",status_code="4xx",upstream="production-hra-80"} 585
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.10.19:80",status_code="5xx",upstream="production-hra-80"} 1
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.11.20:80",status_code="1xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.11.20:80",status_code="2xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.11.20:80",status_code="3xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.11.20:80",status_code="4xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.11.20:80",status_code="5xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.13.4:80",status_code="1xx",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.13.4:80",status_code="2xx",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.13.4:80",status_code="3xx",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.13.4:80",status_code="4xx",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.13.4:80",status_code="5xx",upstream="torchbox-gloucester-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.12:80",status_code="1xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.12:80",status_code="2xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.12:80",status_code="3xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.12:80",status_code="4xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.12:80",status_code="5xx",upstream="production-gip-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.5:80",status_code="1xx",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.5:80",status_code="2xx",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.5:80",status_code="3xx",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.5:80",status_code="4xx",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.5:80",status_code="5xx",upstream="stage-djangocitest-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.6:8080",status_code="1xx",upstream="upstream-default-backend"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.6:8080",status_code="2xx",upstream="upstream-default-backend"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.6:8080",status_code="3xx",upstream="upstream-default-backend"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.6:8080",status_code="4xx",upstream="upstream-default-backend"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.6.6:8080",status_code="5xx",upstream="upstream-default-backend"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.10:80",status_code="1xx",upstream="stage-hra-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.10:80",status_code="2xx",upstream="stage-hra-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.10:80",status_code="3xx",upstream="stage-hra-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.10:80",status_code="4xx",upstream="stage-hra-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.10:80",status_code="5xx",upstream="stage-hra-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.14:80",status_code="1xx",upstream="production-gloucester-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.14:80",status_code="2xx",upstream="production-gloucester-80"} 1705
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.14:80",status_code="3xx",upstream="production-gloucester-80"} 25
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.14:80",status_code="4xx",upstream="production-gloucester-80"} 2213
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.14:80",status_code="5xx",upstream="production-gloucester-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.5:80",status_code="1xx",upstream="production-hra-redirector-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.5:80",status_code="2xx",upstream="production-hra-redirector-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.5:80",status_code="3xx",upstream="production-hra-redirector-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.5:80",status_code="4xx",upstream="production-hra-redirector-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.5:80",status_code="5xx",upstream="production-hra-redirector-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.9:80",status_code="1xx",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.9:80",status_code="2xx",upstream="production-htmlhub-prod-80"} 468
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.9:80",status_code="3xx",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.9:80",status_code="4xx",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.7.9:80",status_code="5xx",upstream="production-htmlhub-prod-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.10:80",status_code="1xx",upstream="production-gloucester-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.10:80",status_code="2xx",upstream="production-gloucester-80"} 1726
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.10:80",status_code="3xx",upstream="production-gloucester-80"} 15
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.10:80",status_code="4xx",upstream="production-gloucester-80"} 2184
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.10:80",status_code="5xx",upstream="production-gloucester-80"} 1
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.4:80",status_code="1xx",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.4:80",status_code="2xx",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.4:80",status_code="3xx",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.4:80",status_code="4xx",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.4:80",status_code="5xx",upstream="torchbox-gip-stage-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.9:80",status_code="1xx",upstream="production-hra-80"} 0
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.9:80",status_code="2xx",upstream="production-hra-80"} 2737
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.9:80",status_code="3xx",upstream="production-hra-80"} 102
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.9:80",status_code="4xx",upstream="production-hra-80"} 638
+nginx_upstream_responses_total{ingress_class="nginx",namespace="",server="100.96.9.9:80",status_code="5xx",upstream="production-hra-80"} 0
+# HELP nginx_upstream_weight Current upstream weight setting of the server.
+# TYPE nginx_upstream_weight counter
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 1
+nginx_upstream_weight{ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 1
+# HELP nginx_vts_upstream_down_total Current down setting of the server.
+# TYPE nginx_vts_upstream_down_total counter
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="0.0.0.1:80",upstream="upstream_balancer"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.10.10:80",upstream="demo-trustserve-control-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.10.19:80",upstream="production-hra-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.11.20:80",upstream="production-gip-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.13.4:80",upstream="torchbox-gloucester-stage-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.6.12:80",upstream="production-gip-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.6.5:80",upstream="stage-djangocitest-stage-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.6.6:8080",upstream="upstream-default-backend"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.7.10:80",upstream="stage-hra-stage-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.7.14:80",upstream="production-gloucester-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.7.5:80",upstream="production-hra-redirector-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.7.9:80",upstream="production-htmlhub-prod-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.9.10:80",upstream="production-gloucester-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.9.4:80",upstream="torchbox-gip-stage-80"} 0
+nginx_vts_upstream_down_total{ingress_class="nginx",namespace="",server="100.96.9.9:80",upstream="production-hra-80"} 0
+# HELP num_procs number of processes
+# TYPE num_procs gauge
+num_procs 3
+# HELP oldest_start_time_seconds start time in seconds since 1970/01/01
+# TYPE oldest_start_time_seconds gauge
+oldest_start_time_seconds 1.527360371e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 214.67
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 26
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 3.444736e+07
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.52736037185e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 5.1388416e+07
+# HELP read_bytes_total number of bytes read
+# TYPE read_bytes_total counter
+read_bytes_total 217088
+# HELP resident_memory_bytes number of bytes of memory in use
+# TYPE resident_memory_bytes gauge
+resident_memory_bytes 6.5835008e+07
+# HELP virtual_memory_bytes number of bytes of memory in use
+# TYPE virtual_memory_bytes gauge
+virtual_memory_bytes 1.78819072e+08
+# HELP write_bytes_total number of bytes written
+# TYPE write_bytes_total counter
+write_bytes_total 163840
