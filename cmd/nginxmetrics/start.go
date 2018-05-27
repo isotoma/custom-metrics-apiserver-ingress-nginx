@@ -1,11 +1,21 @@
 package nginxmetrics
 
 import (
+	"fmt"
 	"io"
 	"time"
 
+	"github.com/kubernetes-incubator/custom-metrics-apiserver/pkg/dynamicmapper"
+	apimeta "k8s.io/apimachinery/pkg/api/meta"
+	"k8s.io/client-go/discovery"
+	"k8s.io/client-go/dynamic"
+	"k8s.io/client-go/rest"
+	"k8s.io/client-go/tools/clientcmd"
+
 	"github.com/kubernetes-incubator/custom-metrics-apiserver/pkg/cmd/server"
 	"github.com/spf13/cobra"
+
+	"github.com/isotoma/custom-metrics-apiserver-ingress-nginx/cmd/nginxprovider"
 )
 
 // Adapter is the adapter that takes nginx metrics and sends them to k8s
@@ -17,8 +27,6 @@ type Adapter struct {
 	DiscoveryInterval time.Duration
 	// EnableCustomMetricsAPI switches on sample apiserver for Custom Metrics API
 	EnableCustomMetricsAPI bool
-	// EnableExternalMetricsAPI switches on sample apiserver for External Metrics API
-	EnableExternalMetricsAPI bool
 }
 
 // Start starts the server
@@ -27,8 +35,6 @@ func Start(out, errOut io.Writer, stopCh <-chan struct{}) *cobra.Command {
 	adapter := Adapter{
 		CustomMetricsAdapterServerOptions: baseOpts,
 		DiscoveryInterval:                 10 * time.Minute,
-		EnableCustomMetricsAPI:            true,
-		EnableExternalMetricsAPI:          true,
 	}
 
 	cmd := &cobra.Command{
@@ -58,19 +64,51 @@ func Start(out, errOut io.Writer, stopCh <-chan struct{}) *cobra.Command {
 		"any described objects")
 	flags.DurationVar(&adapter.DiscoveryInterval, "discovery-interval", adapter.DiscoveryInterval, ""+
 		"interval at which to refresh API discovery information")
-	flags.BoolVar(&adapter.EnableCustomMetricsAPI, "enable-custom-metrics-api", adapter.EnableCustomMetricsAPI, ""+
-		"whether to enable Custom Metrics API")
-	flags.BoolVar(&adapter.EnableExternalMetricsAPI, "enable-external-metrics-api", adapter.EnableExternalMetricsAPI, ""+
-		"whether to enable External Metrics API")
 
 	return cmd
 
 }
 
+// Run the adapter
 func (a Adapter) Run(stopCh <-chan struct{}) error {
-	// config, err := a.Config()
-	// if err != nil {
-	// return err
-	// }
-	return nil
+	config, err := a.Config()
+	if err != nil {
+		return err
+	}
+	var clientConfig *rest.Config
+	if len(a.RemoteKubeConfigFile) > 0 {
+		loadingRules := &clientcmd.ClientConfigLoadingRules{ExplicitPath: a.RemoteKubeConfigFile}
+		loader := clientcmd.NewNonInteractiveDeferredLoadingClientConfig(loadingRules, &clientcmd.ConfigOverrides{})
+
+		clientConfig, err = loader.ClientConfig()
+	} else {
+		clientConfig, err = rest.InClusterConfig()
+	}
+	if err != nil {
+		return fmt.Errorf("unable to construct lister client config to initialize provider: %v", err)
+	}
+
+	discoveryClient, err := discovery.NewDiscoveryClientForConfig(clientConfig)
+	if err != nil {
+		return fmt.Errorf("unable to construct discovery client for dynamic client: %v", err)
+	}
+
+	// NB: since we never actually look at the contents of
+	// the objects we fetch (beyond ObjectMeta), unstructured should be fine
+	dynamicMapper, err := dynamicmapper.NewRESTMapper(discoveryClient, apimeta.InterfacesForUnstructured, a.DiscoveryInterval)
+	if err != nil {
+		return fmt.Errorf("unable to construct dynamic discovery mapper: %v", err)
+	}
+
+	clientPool := dynamic.NewClientPool(clientConfig, dynamicMapper, dynamic.LegacyAPIPathResolverFunc)
+	if err != nil {
+		return fmt.Errorf("unable to construct lister client to initialize provider: %v", err)
+	}
+
+	metricsProvider := nginxprovider.New(clientPool, dynamicMapper)
+	server, err := config.Complete().New("ingress-nginx-custom-metrics-adapter", metricsProvider, nil)
+	if err != nil {
+		return err
+	}
+	return server.GenericAPIServer.PrepareRun().Run(stopCh)
 }
