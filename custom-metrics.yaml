@@ -1,0 +1,160 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: custom-metrics-apiserver-ingress-nginx
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: custom-metrics-apiserver-ingress-nginx:system:auth-delegator
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+- kind: ServiceAccount
+  name: custom-metrics-apiserver-ingress-nginx
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: custom-metrics-apiserver-ingress-nginx-auth-reader
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: extension-apiserver-authentication-reader
+subjects:
+- kind: ServiceAccount
+  name: custom-metrics-apiserver-ingress-nginx
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: custom-metrics-apiserver-ingress-nginx-resource-reader
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - pods
+  - services
+  verbs:
+  - get
+  - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: custom-metrics-apiserver-ingress-nginx-resource-reader
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: custom-metrics-apiserver-ingress-nginx-resource-reader
+subjects:
+- kind: ServiceAccount
+  name: custom-metrics-apiserver-ingress-nginx
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: custom-metrics-getter
+rules:
+- apiGroups:
+  - custom.metrics.k8s.io
+  resources:
+  - "*"
+  verbs:
+  - "*"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: hpa-custom-metrics-getter
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: custom-metrics-getter
+subjects:
+- kind: ServiceAccount
+  name: horizontal-pod-autoscaler
+  namespace: kube-system
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: custom-metrics-apiserver-ingress-nginx
+  namespace: kube-system
+  labels:
+    app: custom-metrics-apiserver-ingress-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: custom-metrics-apiserver-ingress-nginx
+  template:
+    metadata:
+      labels:
+        app: custom-metrics-apiserver-ingress-nginx
+    spec:
+      serviceAccountName: custom-metrics-apiserver-ingress-nginx
+      containers:
+      - name: custom-metrics-server
+        image: quay.io/isotoma/custom-metrics-apiserver-ingress-nginx
+        ports:
+        - containerPort: 443
+        securityContext:
+          runAsUser: 0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: custom-metrics-apiserver-ingress-nginx
+  namespace: kube-system
+spec:
+  ports:
+  - port: 443
+    targetPort: 443
+  selector:
+    app: custom-metrics-apiserver-ingress-nginx
+---
+apiVersion: apiregistration.k8s.io/v1beta1
+kind: APIService
+metadata:
+  name: v1beta1.custom.metrics.k8s.io
+spec:
+  insecureSkipTLSVerify: true
+  group: custom.metrics.k8s.io
+  groupPriorityMinimum: 1000
+  versionPriority: 5
+  service:
+    name: custom-metrics-apiserver-ingress-nginx
+    namespace: kube-system
+  version: v1beta1
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: custom-metrics-server-resources
+rules:
+- apiGroups:
+  - custom-metrics.metrics.k8s.io
+  resources: ["*"]
+  verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: hpa-controller-custom-metrics
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: custom-metrics-server-resources
+subjects:
+- kind: ServiceAccount
+  name: horizontal-pod-autoscaler
+  namespace: kube-system

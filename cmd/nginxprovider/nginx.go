@@ -177,18 +177,38 @@ func (p *nginxProvider) ListAllMetrics() []provider.CustomMetricInfo {
 	// TODO: maybe dynamically generate this?
 	return []provider.CustomMetricInfo{
 		{
-			GroupResource: schema.GroupResource{Group: "", Resource: "pods"},
-			Metric:        "packets-per-second",
-			Namespaced:    true,
+			GroupResource: schema.GroupResource{Group: "", Resource: "upstream"},
+			Metric:        "requests_total",
+			Namespaced:    false,
 		},
 		{
-			GroupResource: schema.GroupResource{Group: "", Resource: "services"},
-			Metric:        "connections-per-second",
-			Namespaced:    true,
+			GroupResource: schema.GroupResource{Group: "", Resource: "upstream"},
+			Metric:        "bytes_total",
+			Namespaced:    false,
 		},
 		{
-			GroupResource: schema.GroupResource{Group: "", Resource: "namespaces"},
-			Metric:        "queue-length",
+			GroupResource: schema.GroupResource{Group: "", Resource: "upstream"},
+			Metric:        "fail_timeout",
+			Namespaced:    false,
+		},
+		{
+			GroupResource: schema.GroupResource{Group: "", Resource: "upstream"},
+			Metric:        "maxfails",
+			Namespaced:    false,
+		},
+		{
+			GroupResource: schema.GroupResource{Group: "", Resource: "upstream"},
+			Metric:        "response_msecs_avg",
+			Namespaced:    false,
+		},
+		{
+			GroupResource: schema.GroupResource{Group: "", Resource: "upstream"},
+			Metric:        "responses_total",
+			Namespaced:    false,
+		},
+		{
+			GroupResource: schema.GroupResource{Group: "", Resource: "upstream"},
+			Metric:        "weight",
 			Namespaced:    false,
 		},
 	}
