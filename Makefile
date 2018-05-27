@@ -8,6 +8,7 @@ release: build
 
 build: 
 	CGO_ENABLED=0 $(GO) build
+	strip ./custom-metrics-apiserver-ingress-nginx
 
 vendor: glide.yaml glide.lock
 	glide update --strip-vendor && touch vendor
