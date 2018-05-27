@@ -118,7 +118,8 @@ func (p *nginxProvider) metricsFor(totalValue int64, groupResource schema.GroupR
 		Items: res,
 	}, nil
 }
-func (p *nginxProvider) GetRootScopedMetricByName(groupResource schema.GroupResource, name string, metricName string) (*custom_metrics.MetricValue, error) {
+func (p *nginxProvider) GetRootScopedMetricByName(groupResource schema.GroupResource, name, metricName string) (*custom_metrics.MetricValue, error) {
+	fmt.Println("GetRootScopedMetricsByName")
 	value, err := p.valueFor(groupResource, metricName, false)
 	if err != nil {
 		return nil, err
@@ -174,7 +175,7 @@ func (p *nginxProvider) valueFor(groupResource schema.GroupResource, metricName 
 }
 
 func (p *nginxProvider) ListAllMetrics() []provider.CustomMetricInfo {
-	// TODO: maybe dynamically generate this?
+	fmt.Println("ListAllMetrics")
 	return []provider.CustomMetricInfo{
 		{
 			GroupResource: schema.GroupResource{Group: "", Resource: "service"},
