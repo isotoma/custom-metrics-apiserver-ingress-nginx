@@ -35,7 +35,6 @@ type nginxProvider struct {
 
 // New creates a new client
 func New(pool dynamic.ClientPool, mapper apimeta.RESTMapper, label, port, path string, interval time.Duration, samples int64) provider.CustomMetricsProvider {
-	//nginx := client.NewMetricsClient("ingress-nginx", "10254", "/metrics", "20s", 6)
 	nginx := client.NewMetricsClient(label, port, path, interval, samples)
 	nginx.Do()
 	return &nginxProvider{
