@@ -31,7 +31,7 @@ type NginxMetricsClient struct {
 	Label         string
 	Port          string
 	Path          string
-	Duration      string
+	Duration      time.Duration
 	MovingSamples int64
 	last          map[TotalKey]int64
 	lastTime      time.Time
@@ -39,7 +39,7 @@ type NginxMetricsClient struct {
 }
 
 // NewMetricsClient returns a new client and starts collecting metrics
-func NewMetricsClient(label, port, path, duration string, movingSamples int64) *NginxMetricsClient {
+func NewMetricsClient(label, port, path string, duration time.Duration, movingSamples int64) *NginxMetricsClient {
 	return &NginxMetricsClient{
 		Label:         label,
 		Port:          port,
@@ -57,11 +57,7 @@ func (c *NginxMetricsClient) Do() {
 
 // LoopForever starts the regular requests
 func (c *NginxMetricsClient) LoopForever() {
-	duration, err := time.ParseDuration(c.Duration)
-	if err != nil {
-		panic(err)
-	}
-	ticker := time.NewTicker(duration)
+	ticker := time.NewTicker(c.Duration)
 	for {
 		select {
 		case <-ticker.C:
@@ -96,6 +92,10 @@ func (c *NginxMetricsClient) Loop() {
 		fmt.Println(err.Error())
 	}
 	c.UpdateRates(metrics)
+}
+
+func (c *NginxMetricsClient) Timestamp() time.Time {
+	return c.lastTime
 }
 
 func TotalRequests(podMetrics map[string][]UpstreamMetric) map[TotalKey]int64 {
@@ -152,16 +152,20 @@ func average(n []int64) int64 {
 }
 
 // CalculateRates calculates the moving average rates per service
-func CalculateRates(newRates map[RateKey][]int64, oldRates map[RateKey]int64, period, samples int64) map[RateKey]int64 {
+func CalculateRates(newRates map[RateKey][]int64, oldRates map[RateKey]int64, period int64, ingressPods int64, samples int64) map[RateKey]int64 {
 	newCurrent := make(map[RateKey]int64)
 	for k, v := range newRates {
 		avg := average(v)
-		newRate := avg / period
+		newRate := (avg * ingressPods) / period
 		// Basic average if we don't have the old one
 		newCurrent[k] = newRate
 		// We can calculate a moving average, if we have the old one
 		if oldRate, ok := oldRates[k]; ok {
 			newCurrent[k] = oldRate - (oldRate / samples) + (newRate / samples)
+			// can't go less than zero
+			if newCurrent[k] < 0 {
+				newCurrent[k] = 0
+			}
 		}
 	}
 	return newCurrent
@@ -181,7 +185,8 @@ func (c *NginxMetricsClient) UpdateRates(podMetrics map[string][]UpstreamMetric)
 		return
 	}
 	diffs := AggregateTotals(totals, last)
-	c.current = CalculateRates(diffs, c.current, period, c.MovingSamples)
+	ingressPods := int64(len(podMetrics))
+	c.current = CalculateRates(diffs, c.current, period, ingressPods, c.MovingSamples)
 }
 
 // Fetch gets the values from the current ingress pods
