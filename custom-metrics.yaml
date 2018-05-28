@@ -104,7 +104,7 @@ spec:
       serviceAccountName: custom-metrics-apiserver-ingress-nginx
       containers:
       - name: custom-metrics-server
-        image: quay.io/isotoma/custom-metrics-apiserver-ingress-nginx:latest
+        image: quay.io/isotoma/custom-metrics-apiserver-ingress-nginx:29
         ports:
         - containerPort: 443
         securityContext:
