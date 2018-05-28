@@ -1,5 +1,7 @@
 # custom-metrics-apiserver-ingress-nginx
 
+[![Docker Repository on Quay](https://quay.io/repository/isotoma/custom-metrics-apiserver-ingress-nginx/status "Docker Repository on Quay")](https://quay.io/repository/isotoma/custom-metrics-apiserver-ingress-nginx)
+
 A Kubernetes API Server custom metrics adapter for Ingress Nginx.
 
 This provides http request rate statistics in a format that can be used by the Horizontal Pod Autoscaler to scale a deployment. It uses the prometheus metrics endpoint provided by the ingress controller. This is the case even if you are not using prometheus.
