@@ -2,7 +2,7 @@
 
 [![Docker Repository on Quay](https://quay.io/repository/isotoma/custom-metrics-apiserver-ingress-nginx/status "Docker Repository on Quay")](https://quay.io/repository/isotoma/custom-metrics-apiserver-ingress-nginx)
 
-A Kubernetes API Server custom metrics adapter for Ingress Nginx.
+A Kubernetes API Server custom metrics adapter for Ingress Nginx (for versions up to 0.15).
 
 This provides http request rate statistics in a format that can be used by the Horizontal Pod Autoscaler to scale a deployment. It uses the prometheus metrics endpoint provided by the ingress controller. This is the case even if you are not using prometheus.
 
@@ -12,9 +12,28 @@ This provides http request rate statistics in a format that can be used by the H
 
 First you need to turn on the custom VTS metrics for prometheus, thusly:
 
-https://github.com/kubernetes/ingress-nginx/tree/master/docs/examples/customization/custom-vts-metrics-prometheus
+https://github.com/kubernetes/ingress-nginx/tree/nginx-0.15.0/docs/examples/customization/custom-vts-metrics-prometheus
 
 You should also do the rather opaque step "Customize ingress".
+
+If deploying the ingress controller with helm, this all amounts to:
+
+1. Setting the following in the nginx-ingress chart:
+```yaml
+controller:
+  stats:
+    enabled: true
+  metrics:
+    enabled: true
+  config:
+    vts-default-filter-key: "$server_name"
+```
+2. Setting (something like) the following for your charts with ingress items:
+```yaml
+ingress:
+  annotations:
+    nginx.ingress.kubernetes.io/vts-filter-key: $uri $server_name
+```
 
 ### Run the custom metrics server
 
